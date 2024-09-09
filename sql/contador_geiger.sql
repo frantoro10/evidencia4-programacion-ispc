@@ -2,7 +2,10 @@
 --
 -- Host: localhost    Database: contador_geiger_database
 -- ------------------------------------------------------
--- Server version	8.0.39
+-- Server version 8.0.39
+
+CREATE DATABASE IF NOT EXISTS contador_geiger_database;
+USE contador_geiger_database;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +17,21 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `operadores`
+--
+
+DROP TABLE IF EXISTS `operadores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `operadores` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `nacionalidad` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `contador_geiger`
@@ -35,6 +53,16 @@ CREATE TABLE `contador_geiger` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `operadores`
+--
+
+LOCK TABLES `operadores` WRITE;
+/*!40000 ALTER TABLE `operadores` DISABLE KEYS */;
+INSERT INTO `operadores` VALUES (1,'Francisco','Argentina'),(2,'Fernando','Argentina'),(3,'Martin','Argentina'),(4,'Jule','Alemania'),(5,'Reus','Alemania'),(6,'Frank','Alemania'),(7,'John','Estados Unidos'),(8,'Bryan','Estados Unidos'),(9,'Tom','Estados Unidos'),(10,'Myle','Estados Unidos');
+/*!40000 ALTER TABLE `operadores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `contador_geiger`
 --
 
@@ -44,32 +72,7 @@ INSERT INTO `contador_geiger` VALUES (1,50,'2024-01-13 00:00:00','Russia',1),(2,
 /*!40000 ALTER TABLE `contador_geiger` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `operadores`
---
-
-DROP TABLE IF EXISTS `operadores`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `operadores` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `nacionalidad` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `operadores`
---
-
-LOCK TABLES `operadores` WRITE;
-/*!40000 ALTER TABLE `operadores` DISABLE KEYS */;
-INSERT INTO `operadores` VALUES (1,'Francisco','Argentina'),(2,'Fernando','Argentina'),(3,'Martin','Argentina'),(4,'Jule','Alemania'),(5,'Reus','Alemania'),(6,'Frank','Alemania'),(7,'John','Estados Unidos'),(8,'Bryan','Estados Unidos'),(9,'Tom','Estados Unidos'),(10,'Myle','Estados Unidos');
-/*!40000 ALTER TABLE `operadores` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

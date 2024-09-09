@@ -9,7 +9,7 @@ class ContadorGeiger:
         self.encendido = False
         self.contador = 0
         self.sensibilidad = sensibilidad
-        self.alarma = False
+        self.__alarma = False # Atributo encapsulado
         # Nivel de radiación minima para hacer sonar la alarma.
         self.min_alarma = 100
 
@@ -50,10 +50,10 @@ class ContadorGeiger:
             raise ValueError(
                 "La alarma no se configurara ni se activara si el dispositivo no se encuentra encendido.")
         if self.contador >= self.min_alarma:
-            self.alarma = True
-            return self.alarma
+            self.__alarma = True
+            return self.__alarma
         else:
-            return self.alarma
+            return self.__alarma
 
     # Get, para obtener los atributos del objeto.
     def __str__(self):
